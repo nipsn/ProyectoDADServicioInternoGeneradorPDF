@@ -1,4 +1,3 @@
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
@@ -41,7 +40,7 @@ public class ThreadPooledServer implements Runnable{
                 }
                 throw new RuntimeException("Error accepting client connection", e);
             }
-            if(!inputLine.equals("")) {
+            if(!inputLine.isEmpty()) {
                 this.threadPool.execute(new GeneradorRunnable(clientSocket, Integer.parseInt(inputLine)));
             }
         }
