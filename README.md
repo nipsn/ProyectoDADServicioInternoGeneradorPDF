@@ -12,3 +12,10 @@ Sigue el siguiente esquema de funcionamiento:
 
 #### Concurrencia:
 Debido a que el Servicio Interno debe poder atender múltiples peticiones, se debe de generar un nuevo hilo con cada petición que llegue. Para ello se una una Thread Pool, que limita el número de hilos que pueden estar en ejecución simultaneamente. Se ha decidido poner este límite debido a que si llegan demasiadas peticiones (pongamos 10000), la aplicación tardaría demasiado en atender cada petición. Poniendo un límite razonable es posible que un usuario en un momento dado no pueda generar un PDF, pero por norma general, se da mejor servicio al cliente.
+
+
+### Ejemplo de XML generado:
+![alt text](ejemploXML.png)
+
+### Ejemplo de PDF generado:
+![alt text](ejemploPDF.png)
