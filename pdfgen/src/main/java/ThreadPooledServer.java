@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,7 +14,7 @@ public class ThreadPooledServer implements Runnable{
     protected boolean isStopped  = false;
     protected Thread runningThread= null;
     protected ExecutorService threadPool = Executors.newFixedThreadPool(20);
-    protected String inputLine = "";
+    protected int inputInt = -1;
 
     public ThreadPooledServer(int port){
         this.serverPort = port;
@@ -28,10 +29,10 @@ public class ThreadPooledServer implements Runnable{
             Socket clientSocket = null;
             try {
                 clientSocket = this.serverSocket.accept();
-                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                while((inputLine = in.readLine()) != null){
-                    System.out.println(inputLine);
-                }
+
+                DataInputStream dis = new DataInputStream(clientSocket.getInputStream());
+                inputInt = dis.readInt();
+
 
             } catch (IOException e) {
                 if(isStopped()) {
@@ -40,9 +41,9 @@ public class ThreadPooledServer implements Runnable{
                 }
                 throw new RuntimeException("Error accepting client connection", e);
             }
-            if(!inputLine.isEmpty()) {
-                this.threadPool.execute(new GeneradorRunnable(clientSocket, Integer.parseInt(inputLine)));
-            }
+            if(inputInt >= 0)
+                this.threadPool.execute(new GeneradorRunnable(clientSocket, inputInt));
+
         }
         this.threadPool.shutdown();
         System.out.println("Server Stopped.") ;

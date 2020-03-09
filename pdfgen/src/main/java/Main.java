@@ -5,9 +5,8 @@ public class Main  {
 
     public static void main( String[] args ){
         //TODO: implement propper thread pool
-        ExecutorService threadPool = Executors.newFixedThreadPool(10);
-        threadPool.execute(new GeneradorRunnable());
-        threadPool.shutdown();
+        ThreadPooledServer server = new ThreadPooledServer(10000);
+        new Thread(server).start();
     }
 
 }

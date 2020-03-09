@@ -10,9 +10,7 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 import java.sql.*;
 
@@ -45,16 +43,39 @@ public class GeneradorRunnable implements Runnable{
 
     @Override
     public void run() {
+        int closeConnection = -1;
         Pedido pedido = buscaEnBBDD();
         objetoAXml(pedido);
         try {
             convertirAPDF();
+            File pdf = new File(OUTPUT_DIR + "factura" + this.pedidoId + ".pdf");
+
+            InputStream is = new FileInputStream(pdf);
+            OutputStream os = clientSocket.getOutputStream();
+
+            copy(is,os);
+
+            os.close();
+            is.close();
+            clientSocket.close();
+
+            System.out.println("Factura enviada");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (FOPException e) {
             e.printStackTrace();
         } catch (TransformerException e) {
             e.printStackTrace();
+        }
+
+
+    }
+
+    static void copy(InputStream in, OutputStream out) throws IOException {
+        byte[] buf = new byte[512];
+        int len = 0;
+        while ((len = in.read(buf)) != -1) {
+            out.write(buf, 0, len);
         }
     }
 
@@ -64,7 +85,6 @@ public class GeneradorRunnable implements Runnable{
         int idProd = -1;
         int idDestinatario = -1;
         Pedido pedido = new Pedido();
-        int givenId = 8; // TODO: usar variable local que recibe del cliente
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -72,10 +92,10 @@ public class GeneradorRunnable implements Runnable{
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             System.out.println("Connected database successfully...");
 
-            System.out.println("Creating statement...");
+            System.out.println("Creating statement for id " + this.pedidoId);
             stmt = conn.createStatement();
 
-            String sql = "SELECT * FROM pedido WHERE id="+givenId;
+            String sql = "SELECT * FROM pedido WHERE id="+this.pedidoId;
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 pedido.setId(rs.getLong("id"));
