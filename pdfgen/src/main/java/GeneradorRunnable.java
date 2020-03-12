@@ -43,9 +43,18 @@ public class GeneradorRunnable implements Runnable{
 
     @Override
     public void run() {
-        int closeConnection = -1;
-        Pedido pedido = buscaEnBBDD();
-        objetoAXml(pedido);
+        boolean existe = false;
+        File[] plantillas = new File(RESOURCES_DIR).listFiles();
+        for(File file : plantillas){
+            if(file.getName().contains(Integer.toString(pedidoId))){
+                existe = true;
+                break;
+            }
+        }
+        if(!existe) {
+            Pedido pedido = buscaEnBBDD();
+            objetoAXml(pedido);
+        }
         try {
             convertirAPDF();
             File pdf = new File(OUTPUT_DIR + "factura" + this.pedidoId + ".pdf");
@@ -59,7 +68,12 @@ public class GeneradorRunnable implements Runnable{
             is.close();
             clientSocket.close();
 
-            System.out.println("Factura enviada");
+            System.out.println("Factura enviada, eliminando de local...");
+            if(pdf.delete()){
+                System.out.println("Factura eliminada");
+            } else {
+                System.err.println("No se ha podido eliminar");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (FOPException e) {
