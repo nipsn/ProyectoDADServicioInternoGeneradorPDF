@@ -2,6 +2,9 @@ package com.company;
 
 import com.sun.security.ntlm.Server;
 
+import javax.net.SocketFactory;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -10,9 +13,14 @@ public class Main {
 
     public static void main(String[] args) {
 	    // Envio el id
-        Socket serverSocket = null;
+	    //Código del cliente
+        System.setProperty("javax.net.ssl.trustStore", "myclientkeystore");
+        System.setProperty("javax.net.ssl.trustStorePassword", "123456");
+        SocketFactory ssf = SSLSocketFactory.getDefault();
+
+        SSLSocket serverSocket = null;
         try {
-            serverSocket = new Socket("localhost", 10000);
+            serverSocket =(SSLSocket) ssf.createSocket("localhost",10000);
             DataOutputStream dos = new DataOutputStream(serverSocket.getOutputStream());
             dos.writeInt(8);
 
