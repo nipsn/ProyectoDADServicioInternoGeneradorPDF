@@ -1,5 +1,5 @@
 # ProyectoDADServicioInternoGeneradorPDF
-Servicio interno de Proyecto Marketplace que genera facturas en PDF.
+Servicio interno de Proyecto Marketplace que genera facturas en PDF. NO FUNCIONA. MIRAR RAMA NoSSL.
 
 Sigue el siguiente esquema de funcionamiento:
 - La aplicación se concecta mediante socket TLS al Servicio Interno y le envía un id del Pedido del que necesita la factura.
