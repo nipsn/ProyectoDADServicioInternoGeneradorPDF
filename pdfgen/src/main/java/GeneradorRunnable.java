@@ -37,9 +37,6 @@ public class GeneradorRunnable implements Runnable{
         this.pedidoId = pedidoId;
     }
 
-    public GeneradorRunnable(){
-
-    }
 
     @Override
     public void run() {

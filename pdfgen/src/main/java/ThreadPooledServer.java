@@ -1,6 +1,6 @@
-import java.io.BufferedReader;
+import javax.net.ServerSocketFactory;
+import javax.net.ssl.SSLServerSocketFactory;
 import java.io.DataInputStream;
-import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.IOException;
@@ -24,6 +24,9 @@ public class ThreadPooledServer implements Runnable{
         synchronized(this){
             this.runningThread = Thread.currentThread();
         }
+
+        System.setProperty("Djavax.net.ssl.keyStore", "myserverkeystore");
+        System.setProperty("Djavax.net.ssl.keyStorePassword", "123456");
         openServerSocket();
         while(!isStopped()){
             Socket clientSocket = null;
@@ -65,7 +68,8 @@ public class ThreadPooledServer implements Runnable{
 
     private void openServerSocket() {
         try {
-            this.serverSocket = new ServerSocket(this.serverPort);
+            ServerSocketFactory ssf = SSLServerSocketFactory.getDefault();
+            this.serverSocket = ssf.createServerSocket(this.serverPort);
         } catch (IOException e) {
             throw new RuntimeException("Cannot open port", e);
         }
