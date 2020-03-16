@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f9e8dae5-9d3a-472f-8f85-f65e7a52bb39" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../factura.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pdfgen/pdfgen.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../pdfgen/pdfgen.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pdfgen/src/main/java/GeneradorRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../pdfgen/src/main/java/GeneradorRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pdfgen/src/main/resources/input0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pdfgen/src/main/resources/output/factura0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pdfgen/target/classes/GeneradorRunnable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../pdfgen/target/classes/GeneradorRunnable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pdfgen/target/classes/input0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pdfgen/target/classes/output/factura0.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/factura.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/testclient/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testclient.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZDqHZ6iNcD8EVIC27iv4loF2Q5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9e8dae5-9d3a-472f-8f85-f65e7a52bb39" name="Default Changelist" comment="" />
+      <created>1584383924529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584383924529</updated>
+      <workItem from="1584383925712" duration="22000" />
+      <workItem from="1584384945662" duration="193000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="73" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584384991938">
+      <screen x="0" y="28" width="2560" height="1052" />
+    </state>
+    <state x="73" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.28.2560.1052@0.28.2560.1052" timestamp="1584384991938" />
+    <state x="347" y="338" width="525" height="429" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584384990487">
+      <screen x="0" y="28" width="2560" height="1052" />
+    </state>
+    <state x="347" y="338" width="525" height="429" key="#com.intellij.ide.util.TreeClassChooserDialog/0.28.2560.1052@0.28.2560.1052" timestamp="1584384990487" />
+    <state x="1155" y="122" width="1395" height="861" key="new project wizard" timestamp="1584385136478">
+      <screen x="0" y="28" width="2560" height="1052" />
+    </state>
+    <state x="1155" y="122" width="1395" height="861" key="new project wizard/0.28.2560.1052@0.28.2560.1052" timestamp="1584385136478" />
+  </component>
+</project>

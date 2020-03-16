@@ -121,6 +121,7 @@ public class GeneradorRunnable implements Runnable{
                 pedido.setNombreProducto(rs.getString("nombre"));//TODO: fix to new naming scheme
             }
             rs.close();
+            System.out.println("finished accessing db");
         }catch(SQLException se){
             se.printStackTrace();
         }catch(Exception e){

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<pedido>
-    <id>8</id>
-    <precio>33.55</precio>
-    <direccionDestino>destino</direccionDestino>
-    <fecha>2020-03-07T00:00:00+01:00</fecha>
-    <destinatario>usuariotest</destinatario>
-    <nombreProducto>titulo</nombreProducto>
-</pedido>
