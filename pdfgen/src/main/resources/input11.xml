@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pedido>
+    <id>11</id>
+    <precio>321321.0</precio>
+    <direccionDestino>calle,cp,localidad</direccionDestino>
+    <fecha>2020-03-19T00:00:00+01:00</fecha>
+    <destinatario>testuser1</destinatario>
+    <nombreProducto>un titulo interesante 2</nombreProducto>
+</pedido>

@@ -23,7 +23,7 @@ public class GeneradorRunnable implements Runnable{
     public static final String OUTPUT_DIR;
 
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/db_marketplace";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/db_marketplace_sec";
     static final String USER = "admin";
     static final String PASS = "rooturjc";
 
@@ -111,17 +111,17 @@ public class GeneradorRunnable implements Runnable{
             sql ="SELECT * FROM usuario WHERE id=" + idDestinatario;
             rs = stmt.executeQuery(sql);
             while (rs.next()){
-                pedido.setDestinatario(rs.getString("nombre"));//TODO: fix to new naming scheme
+                pedido.setDestinatario(rs.getString("nombre_real"));//TODO: fix to new naming scheme
             }
             rs.close();
 
             sql ="SELECT * FROM producto WHERE id=" + idProd;
             rs = stmt.executeQuery(sql);
             while (rs.next()){
-                pedido.setNombreProducto(rs.getString("nombre"));//TODO: fix to new naming scheme
+                pedido.setNombreProducto(rs.getString("titulo"));//TODO: fix to new naming scheme
             }
             rs.close();
-            System.out.println("finished accessing db");
+            System.out.println("Finished accessing db");
         }catch(SQLException se){
             se.printStackTrace();
         }catch(Exception e){

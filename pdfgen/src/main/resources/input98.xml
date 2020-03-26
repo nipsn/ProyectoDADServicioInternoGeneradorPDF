@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pedido>
+    <id>98</id>
+    <precio>1.23123123E8</precio>
+    <direccionDestino>destino</direccionDestino>
+    <fecha>0002-02-20T00:00:00+01:00</fecha>
+    <destinatario>t2</destinatario>
+    <nombreProducto>titulo</nombreProducto>
+</pedido>
